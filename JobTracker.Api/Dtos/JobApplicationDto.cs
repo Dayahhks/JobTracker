@@ -1,8 +1,12 @@
-﻿using System;
+﻿using JobTracker.Api.Models;
 
-public class JobApplicationDto
-{
-	public JobApplicationDto()
-	{
-	}
-}
+namespace JobTracker.Api.Dtos;
+
+public record JobApplicationDto(
+    int Id,
+    string Company,
+    string Title,
+    string? Link,
+    Stage Stage,
+    DateTime AppliedDate,
+    DateTime UpdatedAt);

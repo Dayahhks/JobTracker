@@ -1,8 +1,9 @@
-﻿using System;
+﻿namespace JobTracker.Api.Models;
 
-public class Stage
+public enum Stage
 {
-	public Stage()
-	{
-	}
+    Applied,
+    Interview,
+    Offer,
+    Rejected
 }
