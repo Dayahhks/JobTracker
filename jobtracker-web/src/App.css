@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #f2f5f9;
+  background: #b7d2f5;
   color: #12203a;
   font:
     16px/1.5 system-ui,
@@ -12,8 +12,8 @@ body {
   padding: 1.5rem 1rem 4rem;
 }
 .card {
-  background: #fff;
-  border: 1px solid #d9e0ea;
+  background: #9facb8;
+  border: 1px solid #000000;
   border-radius: 0.6rem;
   padding: 1.25rem;
   margin-bottom: 1.5rem;
@@ -37,7 +37,7 @@ button {
   padding: 0.55rem 1rem;
   border: 0;
   border-radius: 0.4rem;
-  background: #1f5eff;
+  background: #5c3ff0;
   color: #fff;
   font: inherit;
   cursor: pointer;
@@ -47,7 +47,7 @@ button.secondary {
   color: #12203a;
 }
 button.danger {
-  background: #d92d20;
+  background: #9a8ddf;
 }
 button:disabled {
   opacity: 0.6;
@@ -73,7 +73,7 @@ button:disabled {
 }
 .tablewrap {
   overflow-x: auto;
-  background: #fff;
+  background: #dce3fa;
   border: 1px solid #d9e0ea;
   border-radius: 0.6rem;
 }
