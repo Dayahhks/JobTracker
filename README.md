@@ -103,7 +103,7 @@ Invalid input returns `400 Bad Request` with the list of problems. You can try e
 ## Roadmap
 
 - [x] Application CRUD and stage updates
-- [] React interface with search and filter
+- [x] React interface with search and filter
 - [ ] Server-side pagination, search, and sorting
 - [ ] Global exception handling with `ProblemDetails`
 - [ ] User registration and login with JWT
