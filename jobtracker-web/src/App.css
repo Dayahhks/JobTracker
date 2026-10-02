@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background: #f2f5f9;
+  color: #12203a;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+}
+.wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid #d9e0ea;
+  border-radius: 0.6rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+.form h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+input,
+select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #c3ccda;
+  border-radius: 0.4rem;
+  font: inherit;
+}
+button {
+  padding: 0.55rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: #1f5eff;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button.secondary {
+  background: #e3e9f3;
+  color: #12203a;
+}
+button.danger {
+  background: #d92d20;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.filters {
+  margin-bottom: 1rem;
+}
+.filters input {
+  flex: 1;
+  min-width: 12rem;
+}
+.error {
+  background: #fde8e6;
+  color: #9b1c12;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+}
+.tablewrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #d9e0ea;
+  border-radius: 0.6rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #e6ebf3;
+}
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.stage.Interview {
+  background: #e0ecff;
+}
+.stage.Offer {
+  background: #dcf5e4;
+}
+.stage.Rejected {
+  background: #fde8e6;
+}
