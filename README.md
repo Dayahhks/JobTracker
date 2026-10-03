@@ -104,9 +104,9 @@ Invalid input returns `400 Bad Request` with the list of problems. You can try e
 
 - [x] Application CRUD and stage updates
 - [x] React interface with search and filter
-- [ ] Server-side pagination, search, and sorting
+- [x] Server-side pagination, search, and sorting
 - [ ] Global exception handling with `ProblemDetails`
-- [ ] User registration and login with JWT
+- [x] User registration and login with JWT
 - [ ] Notes, interviews, and stage history
 - [ ] Dashboard with stats and charts
 - [ ] Unit tests with xUnit
