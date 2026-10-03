@@ -104,5 +104,5 @@ public class JobApplicationService(AppDbContext db) : IJobApplicationService
     }
 
     private static JobApplicationDto ToDto(JobApplication x) =>
-        new(x.Id, x.Company, x.Title, x.Link, x.Stage, x.AppliedDate, x.UpdatedAt);
+        new(x.Id, x.Company, x.Title, x.Link, x.Stage, x.AppliedDate, x.UpdatedAt,x.Source);
 }

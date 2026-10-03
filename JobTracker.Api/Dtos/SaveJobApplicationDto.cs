@@ -8,5 +8,6 @@ namespace JobTracker.Api.Dtos
         [Required, MaxLength(200)] public string Title { get; set; } = "";
         [Url] public string? Link { get; set; }
         public DateTime AppliedDate { get; set; }
+        [MaxLength(50)] public string? Source { get; set; }
     }
 }

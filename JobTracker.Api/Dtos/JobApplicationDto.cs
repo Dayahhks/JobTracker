@@ -9,4 +9,4 @@ public record JobApplicationDto(
     string? Link,
     Stage Stage,
     DateTime AppliedDate,
-    DateTime UpdatedAt);
+    DateTime UpdatedAt, string? Source);
