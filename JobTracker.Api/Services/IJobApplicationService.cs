@@ -4,7 +4,7 @@ namespace JobTracker.Api.Services;
 
 public interface IJobApplicationService
 {
-    Task<List<JobApplicationDto>> GetAllAsync(CancellationToken ct);
+    Task<PagedResult<JobApplicationDto>> GetAllAsync(ApplicationQuery query, CancellationToken ct);
     Task<JobApplicationDto?> GetByIdAsync(int id, CancellationToken ct);
     Task<JobApplicationDto> CreateAsync(SaveJobApplicationDto dto, CancellationToken ct);
     Task<JobApplicationDto?> UpdateAsync(int id, SaveJobApplicationDto dto, CancellationToken ct);

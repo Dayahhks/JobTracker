@@ -101,3 +101,22 @@ td {
 .stage.Rejected {
   background: #fde8e6;
 }
+.authwrap {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+.authwrap h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.topbar .row {
+  align-items: center;
+}

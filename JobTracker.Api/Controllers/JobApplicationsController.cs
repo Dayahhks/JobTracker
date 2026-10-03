@@ -8,8 +8,8 @@ namespace JobTracker.Api.Controllers;
 public class JobApplicationsController(IJobApplicationService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<List<JobApplicationDto>>> GetAll(CancellationToken ct) =>
-        Ok(await service.GetAllAsync(ct));
+    public async Task<ActionResult<PagedResult<JobApplicationDto>>> GetAll([FromQuery] ApplicationQuery query, CancellationToken ct) =>
+        Ok(await service.GetAllAsync(query,ct));
 
     [HttpGet("{id:int}")]
     public async Task<ActionResult<JobApplicationDto>> GetById(int id, CancellationToken ct)
