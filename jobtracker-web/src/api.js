@@ -71,3 +71,4 @@ export const updateStage = (id, stage) =>
   });
 export const deleteApplication = (id) =>
   request(`/api/applications/${id}`, { method: "DELETE" });
+export const getDashboard = () => request("/api/dashboard");

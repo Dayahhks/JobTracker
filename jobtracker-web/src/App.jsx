@@ -3,11 +3,12 @@ import { setUnauthorizedHandler } from "./api";
 import { loadSession, saveSession, clearSession } from "./auth";
 import AuthPage from "./AuthPage";
 import Tracker from "./Tracker";
+import Dashboard from "./Dashboard";
 
 export default function App() {
   const [session, setSession] = useState(loadSession);
+  const [view, setView] = useState("tracker");
 
-  // If any API call returns 401 later, drop back to the login page
   useEffect(() => {
     setUnauthorizedHandler(() => setSession(null));
   }, []);
@@ -22,5 +23,28 @@ export default function App() {
   };
 
   if (!session) return <AuthPage onLogin={login} />;
-  return <Tracker email={session.email} onLogout={logout} />;
+
+  return (
+    <>
+      <nav className="tabs" aria-label="Pages">
+        <button
+          className={view === "tracker" ? "active" : ""}
+          onClick={() => setView("tracker")}
+        >
+          Applications
+        </button>
+        <button
+          className={view === "dashboard" ? "active" : ""}
+          onClick={() => setView("dashboard")}
+        >
+          Dashboard
+        </button>
+      </nav>
+      {view === "tracker" ? (
+        <Tracker email={session.email} onLogout={logout} />
+      ) : (
+        <Dashboard />
+      )}
+    </>
+  );
 }

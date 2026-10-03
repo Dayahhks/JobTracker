@@ -120,3 +120,98 @@ td {
 .topbar .row {
   align-items: center;
 }
+.tabs {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.tabs button {
+  background: #e3e9f3;
+  color: #12203a;
+}
+.tabs button.active {
+  background: #1f5eff;
+  color: #fff;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.cards.two {
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 0.5rem;
+}
+.stat {
+  background: #fff;
+  border: 1px solid #d9e0ea;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.stat .num {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.stat.Interview {
+  background: #e0ecff;
+}
+.stat.Offer {
+  background: #dcf5e4;
+}
+.stat.Rejected {
+  background: #fde8e6;
+}
+.hint {
+  color: #55627a;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+.chart {
+  width: 100%;
+  height: auto;
+}
+.chart .gridline {
+  stroke: #d9e0ea;
+}
+.chart .line {
+  stroke: #1f5eff;
+  stroke-width: 2.5;
+}
+.chart .dot {
+  fill: #1f5eff;
+}
+.chart .axis {
+  fill: #55627a;
+  font-size: 11px;
+}
+.barrow {
+  display: grid;
+  grid-template-columns: 9rem 1fr 2rem;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.bartrack {
+  background: #e6ebf3;
+  border-radius: 999px;
+  height: 0.8rem;
+  overflow: hidden;
+}
+.barfill {
+  background: #1f5eff;
+  height: 100%;
+}
+.barcount {
+  text-align: right;
+  font-weight: 600;
+}

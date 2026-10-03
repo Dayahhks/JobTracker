@@ -1,9 +1,18 @@
 import { useState } from "react";
 
+const SOURCES = [
+  "LinkedIn",
+  "Company website",
+  "Referral",
+  "Indeed",
+  "Naukri",
+  "Other",
+];
 const empty = {
   company: "",
   title: "",
   link: "",
+  source: "",
   appliedDate: new Date().toISOString().slice(0, 10),
 };
 
@@ -13,6 +22,7 @@ export default function ApplicationForm({ initial, onSave, onCancel }) {
       ? {
           ...initial,
           link: initial.link ?? "",
+          source: initial.source ?? "",
           appliedDate: initial.appliedDate.slice(0, 10),
         }
       : empty,
@@ -28,6 +38,7 @@ export default function ApplicationForm({ initial, onSave, onCancel }) {
       company: form.company.trim(),
       title: form.title.trim(),
       link: form.link.trim() || null,
+      source: form.source || null,
       appliedDate: `${form.appliedDate}T00:00:00Z`,
     });
     setSaving(false);
@@ -59,6 +70,12 @@ export default function ApplicationForm({ initial, onSave, onCancel }) {
         value={form.link}
         onChange={change}
       />
+      <select name="source" value={form.source} onChange={change}>
+        <option value="">Where did you find it? (optional)</option>
+        {SOURCES.map((s) => (
+          <option key={s}>{s}</option>
+        ))}
+      </select>
       <input
         name="appliedDate"
         type="date"
