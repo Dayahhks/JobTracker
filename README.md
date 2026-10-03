@@ -108,7 +108,7 @@ Invalid input returns `400 Bad Request` with the list of problems. You can try e
 - [ ] Global exception handling with `ProblemDetails`
 - [x] User registration and login with JWT
 - [ ] Notes, interviews, and stage history
-- [ ] Dashboard with stats and charts
+- [x] Dashboard with stats and charts
 - [ ] Unit tests with xUnit
 - [ ] Docker setup and GitHub Actions CI
 - [ ] Deployment to Azure
