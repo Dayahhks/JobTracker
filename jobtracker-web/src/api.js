@@ -72,3 +72,35 @@ export const updateStage = (id, stage) =>
 export const deleteApplication = (id) =>
   request(`/api/applications/${id}`, { method: "DELETE" });
 export const getDashboard = () => request("/api/dashboard");
+// Notes
+export const getNotes = (appId) => request(`/api/applications/${appId}/notes`);
+export const addNote = (appId, text) =>
+  request(`/api/applications/${appId}/notes`, {
+    method: "POST",
+    body: JSON.stringify({ text }),
+  });
+export const updateNote = (appId, id, text) =>
+  request(`/api/applications/${appId}/notes/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({ text }),
+  });
+export const deleteNote = (appId, id) =>
+  request(`/api/applications/${appId}/notes/${id}`, { method: "DELETE" });
+
+// Interviews
+export const getInterviews = (appId) =>
+  request(`/api/applications/${appId}/interviews`);
+export const addInterview = (appId, data) =>
+  request(`/api/applications/${appId}/interviews`, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+export const updateInterview = (appId, id, data) =>
+  request(`/api/applications/${appId}/interviews/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
+export const deleteInterview = (appId, id) =>
+  request(`/api/applications/${appId}/interviews/${id}`, { method: "DELETE" });
+export const getUpcoming = (days = 7) =>
+  request(`/api/interviews/upcoming?days=${days}`);

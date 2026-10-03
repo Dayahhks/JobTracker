@@ -11,4 +11,6 @@ public class JobApplication
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     public string? Source { get; set; }
+    public List<Note> Notes { get; set; } = [];
+    public List<Interview> Interviews { get; set; } = [];
 }

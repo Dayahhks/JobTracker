@@ -215,3 +215,62 @@ td {
   text-align: right;
   font-weight: 600;
 }
+.row.between {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sub {
+  color: #55627a;
+}
+.detailgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.details h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+.subform {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+textarea {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #c3ccda;
+  border-radius: 0.4rem;
+  font: inherit;
+  resize: vertical;
+}
+.plainlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.listitem {
+  border: 1px solid #e6ebf3;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.notetext {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.meta {
+  color: #55627a;
+  font-size: 0.9rem;
+}
+.outcome.Passed {
+  color: #12733a;
+  font-weight: 600;
+}
+.outcome.Failed {
+  color: #b42318;
+  font-weight: 600;
+}

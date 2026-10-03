@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as api from "./api";
-
+import Upcoming from "./Upcoming";
 const STAGES = ["Applied", "Interview", "Offer", "Rejected"];
 const weekLabel = (iso) =>
   new Date(iso).toLocaleDateString(undefined, {
@@ -112,8 +112,7 @@ export default function Dashboard() {
 
   return (
     <main className="wrap">
-      <h1>Dashboard</h1>
-
+      <Upcoming />
       <div className="cards">
         <div className="stat">
           <span className="num">{data.total}</span>

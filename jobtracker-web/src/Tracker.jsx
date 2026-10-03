@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as api from "./api";
 import ApplicationForm from "./ApplicationForm";
+import ApplicationDetails from "./ApplicationDetails";
 import "./App.css";
 const STAGES = ["Applied", "Interview", "Offer", "Rejected"];
 const COLUMNS = [
@@ -32,6 +33,7 @@ export default function Tracker({ email, onLogout }) {
   const [result, setResult] = useState({ key: "", data: EMPTY });
   const [error, setError] = useState("");
   const [editing, setEditing] = useState(null);
+  const [selected, setSelected] = useState(null);
 
   const requestKey = JSON.stringify({
     search,
@@ -56,22 +58,24 @@ export default function Tracker({ email, onLogout }) {
           totalCount: raw?.totalCount ?? 0,
           totalPages: raw?.totalPages ?? 0,
         };
-        if (!Array.isArray(raw?.items)) {
-          setError(
-            "Unexpected response from the server. Is the API up to date?",
-          );
-        } else {
-          setError("");
-        }
+        setError(
+          Array.isArray(raw?.items)
+            ? ""
+            : "Unexpected response from the server. Is the API up to date?",
+        );
         setResult({ key: requestKey, data });
         if (data.totalPages > 0 && page > data.totalPages)
           setPage(data.totalPages);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        setError(e.message);
+        setResult({ key: requestKey, data: EMPTY });
       });
     return () => {
       cancelled = true;
     };
   }, [requestKey]); // eslint-disable-line react-hooks/exhaustive-deps
-
   const reload = () => setReloadKey((k) => k + 1);
 
   const run = async (action) => {
@@ -98,6 +102,7 @@ export default function Tracker({ email, onLogout }) {
     run(() => api.updateStage(id, newStage));
   const remove = (app) => {
     if (!window.confirm(`Delete ${app.title} at ${app.company}?`)) return;
+    if (selected?.id === app.id) setSelected(null);
     run(() => api.deleteApplication(app.id));
   };
 
@@ -137,6 +142,13 @@ export default function Tracker({ email, onLogout }) {
         />
       ) : (
         <ApplicationForm onSave={add} />
+      )}
+      {selected && (
+        <ApplicationDetails
+          key={selected.id}
+          app={selected}
+          onClose={() => setSelected(null)}
+        />
       )}
 
       <div className="row filters">
@@ -212,6 +224,7 @@ export default function Tracker({ email, onLogout }) {
                 </td>
                 <td>{new Date(a.appliedDate).toLocaleDateString()}</td>
                 <td className="actions">
+                  <button onClick={() => setSelected(a)}>Details</button>
                   <button className="secondary" onClick={() => setEditing(a)}>
                     Edit
                   </button>
