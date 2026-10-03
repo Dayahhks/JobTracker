@@ -1,32 +1,23 @@
 ﻿using JobTracker.Api.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-public class AppDbContext : DbContext
-{
-    public AppDbContext(DbContextOptions<AppDbContext> options)
-        : base(options)
-    {
-    }
+namespace JobTracker.Api.Data;
 
-    public DbSet<JobApplication> JobApplications { get; set; }
+public class AppDbContext(DbContextOptions<AppDbContext> options)
+    : IdentityDbContext<ApplicationUser>(options)
+{
+    public DbSet<JobApplication> JobApplications => Set<JobApplication>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);   
+
         modelBuilder.Entity<JobApplication>(e =>
         {
-            e.Property(x => x.Company)
-                .IsRequired()
-                .HasMaxLength(200);
-
-            e.Property(x => x.Title)
-                .IsRequired()
-                .HasMaxLength(200);
-
-            e.Property(x => x.Stage)
-                .HasConversion<string>()
-                .HasMaxLength(20);
+            e.Property(x => x.Company).IsRequired().HasMaxLength(200);
+            e.Property(x => x.Title).IsRequired().HasMaxLength(200);
+            e.Property(x => x.Stage).HasConversion<string>().HasMaxLength(20);
         });
-
-        base.OnModelCreating(modelBuilder);
     }
 }

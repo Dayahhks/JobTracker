@@ -5,16 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using JobTracker.Api.Data; 
-
+using JobTracker.Api.Data; // or whatever namespace contains AppDbContext
 
 #nullable disable
 
 namespace JobTracker.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261002111705_FixStageConversion")]
-    partial class FixStageConversion
+    [Migration("20261003044748_AddIdentity")]
+    partial class AddIdentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

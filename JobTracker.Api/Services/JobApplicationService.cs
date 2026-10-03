@@ -1,4 +1,5 @@
-﻿using JobTracker.Api.Dtos;
+﻿using JobTracker.Api.Data;
+using JobTracker.Api.Dtos;
 using JobTracker.Api.Models;
 using Microsoft.EntityFrameworkCore;
 namespace JobTracker.Api.Services;
